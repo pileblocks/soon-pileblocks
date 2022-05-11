@@ -1,0 +1,206 @@
+{
+	"ABI version": 2,
+	"version": "2.2",
+	"header": ["pubkey", "time", "expire"],
+	"functions": [
+		{
+			"name": "constructor",
+			"inputs": [
+				{"name":"_indexCode","type":"cell"},
+				{"name":"_gameCode","type":"cell"},
+				{"name":"_walletCode","type":"cell"},
+				{"name":"_tokenRootAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onDeploy",
+			"inputs": [
+				{"name":"gameWallet","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "onGetWalletAddress",
+			"inputs": [
+				{"name":"_walletAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getGameCode",
+			"inputs": [
+				{"name":"gameId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"value0","type":"cell"}
+			]
+		},
+		{
+			"name": "getGameHash",
+			"inputs": [
+				{"name":"gameId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"value0","type":"uint256"}
+			]
+		},
+		{
+			"name": "setGameCode",
+			"inputs": [
+				{"name":"_gameCode","type":"cell"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "activateGame",
+			"inputs": [
+				{"name":"gameAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "runGame",
+			"inputs": [
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "deployGame",
+			"inputs": [
+				{"name":"answerId","type":"uint32"},
+				{"name":"_renderSettings","type":"uint24[]"},
+				{"name":"_gameName","type":"string"},
+				{"name":"_gameStartTime","type":"uint64"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "onGameCompleted",
+			"inputs": [
+				{"components":[{"name":"tokenRootAddress","type":"address"},{"name":"created","type":"uint64"},{"name":"imageOwner","type":"address"},{"name":"gameId","type":"uint32"},{"name":"gameWallet","type":"address"},{"name":"remainingTiles","type":"uint16"},{"name":"gameHost","type":"address"},{"name":"renderConfig","type":"uint24[]"},{"name":"status","type":"uint8"},{"name":"gameName","type":"string"},{"name":"gameStartTime","type":"uint64"}],"name":"gameInfo","type":"tuple"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "setRewardPerGame",
+			"inputs": [
+				{"name":"newRewardPerGame","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "getRewardPerGame",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"uint128"}
+			]
+		},
+		{
+			"name": "getGameAddress",
+			"inputs": [
+				{"components":[{"name":"tokenRootAddress","type":"address"},{"name":"created","type":"uint64"},{"name":"imageOwner","type":"address"},{"name":"gameId","type":"uint32"},{"name":"gameWallet","type":"address"},{"name":"remainingTiles","type":"uint16"},{"name":"gameHost","type":"address"},{"name":"renderConfig","type":"uint24[]"},{"name":"status","type":"uint8"},{"name":"gameName","type":"string"},{"name":"gameStartTime","type":"uint64"}],"name":"gameInfo","type":"tuple"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "getIndexAddress",
+			"inputs": [
+				{"name":"_gameId","type":"uint32"}
+			],
+			"outputs": [
+				{"name":"value0","type":"address"}
+			]
+		},
+		{
+			"name": "isNextGameEmpty",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"value0","type":"bool"}
+			]
+		},
+		{
+			"name": "drain",
+			"inputs": [
+				{"name":"receiver","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "drainGame",
+			"inputs": [
+				{"name":"gameAddress","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "drainTokens",
+			"inputs": [
+				{"name":"value","type":"uint128"},
+				{"name":"receiver","type":"address"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "drainGameTokens",
+			"inputs": [
+				{"name":"gameAddress","type":"address"},
+				{"name":"value","type":"uint128"}
+			],
+			"outputs": [
+			]
+		},
+		{
+			"name": "currentGameId",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"currentGameId","type":"uint32"}
+			]
+		},
+		{
+			"name": "indexCode",
+			"inputs": [
+			],
+			"outputs": [
+				{"name":"indexCode","type":"cell"}
+			]
+		}
+	],
+	"data": [
+		{"key":1,"name":"_randomNonce","type":"uint64"}
+	],
+	"events": [
+	],
+	"fields": [
+		{"name":"_pubkey","type":"uint256"},
+		{"name":"_timestamp","type":"uint64"},
+		{"name":"_constructorFlag","type":"bool"},
+		{"name":"_randomNonce","type":"uint64"},
+		{"name":"currentGameId","type":"uint32"},
+		{"name":"nextGameAddress","type":"address"},
+		{"name":"indexCode","type":"cell"},
+		{"name":"gameCode","type":"cell"},
+		{"name":"walletCode","type":"cell"},
+		{"name":"tokenRootAddress","type":"address"},
+		{"name":"walletAddress","type":"address"},
+		{"name":"rewardPerGame","type":"uint128"}
+	]
+}
